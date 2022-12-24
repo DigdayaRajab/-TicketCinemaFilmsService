@@ -10,7 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -97,11 +96,25 @@ public class FilmServiceImpl implements FilmService {
         }
     }
 
+    @Override
+    public void resetFilmStatusShowing(Integer idFilm) {
+        Films filmResponse = filmRepository.findFilmsById(idFilm);
+        if (filmResponse == null) {
+             log.info("Film id Not Found");
+        }
+
+        try {
+            filmRepository.resetStatusShowing(idFilm);
+        } catch (Exception e) {
+            log.error(e.getMessage());
+        }
+    }
+
 
     @Override
     public List<Films> findFilmsShow() throws Exception {
         List<Films> filmResponse = filmRepository.findFilmsShow();
-        if (filmResponse == null) {
+        if (filmResponse == null || filmResponse.isEmpty()) {
             throw new Exception("Films Showing Not Found");
         }
 

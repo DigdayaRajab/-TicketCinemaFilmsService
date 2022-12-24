@@ -39,7 +39,12 @@ public interface FilmRepository extends JpaRepository<Films, Integer> {
     @Modifying
     @Transactional
     @Query(value = "update films set is_show='true' where id_film = :id_film", nativeQuery = true)
-    void updateStatusShowingTrue( @Param("id_film") Integer idFilm);
+    void updateStatusShowingTrue(@Param("id_film") Integer idFilm);
+
+    @Modifying
+    @Transactional
+    @Query(value = "update films set is_show='false' where id_film = :id_film", nativeQuery = true)
+    void resetStatusShowing(@Param("id_film") Integer idFilm);
 
     @Query(value = "select * from films where is_show = true", nativeQuery = true)
     List<Films> findFilmsShow();

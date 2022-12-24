@@ -23,9 +23,11 @@ public interface FilmService {
 
     Films findFilmsById(Integer idFilm) throws Exception;
 
-    void updateFilmStatusShowing(Integer idFilm) throws Exception;
-
     List<Films> findFilmsShow() throws Exception;
 
     List<Films> findFilmsByName(String filmName) throws Exception;
+
+    void updateFilmStatusShowing(Integer idFilm) throws Exception;
+
+    void resetFilmStatusShowing(Integer idFilm);
 }

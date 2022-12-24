@@ -2,19 +2,17 @@ package com.filmsservice.schedulers;
 
 import com.filmsservice.service.Interface.FilmService;
 import com.filmsservice.service.Interface.ScheduleService;
-import com.filmsservice.service.ScheduleServiceImpl;
 import lombok.extern.slf4j.Slf4j;
+import org.quartz.Job;
+import org.quartz.JobExecutionContext;
+import org.quartz.JobExecutionException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.scheduling.annotation.Schedules;
-import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-@Component
 @Slf4j
-public class updateFilmsStatus {
+public class resetFilmStatus implements Job {
 
     @Autowired
     FilmService filmService;
@@ -22,21 +20,21 @@ public class updateFilmsStatus {
     ScheduleService scheduleService;
 
 
-//    Update Film Status Showing 'true' on date now, every day
-    @Scheduled(cron = "0 0 0 ? * *")  // in one Day
-    public void filmShowing() {
+    //    Reset / Update Film Status Showing 'false' on 23.40, every day
+    @Override
+    public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
         String getDateNow = new SimpleDateFormat("yyyy-MM-dd").format(System.currentTimeMillis());
 
         List<Integer> schedulesAlready = scheduleService.findSchedulesByDate(getDateNow);
         if (!schedulesAlready.isEmpty()) {
             for (int i = 0; i < schedulesAlready.size(); i++) {
                 try {
-                    filmService.updateFilmStatusShowing(schedulesAlready.get(i));
+                    filmService.resetFilmStatusShowing(schedulesAlready.get(i));
                 } catch (Exception e) {
                     log.error("Error Schedulers Update Showing Film : " + e.getMessage());
                 }
             }
         }
     }
-
 }
+

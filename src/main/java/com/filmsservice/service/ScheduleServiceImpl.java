@@ -137,11 +137,6 @@ public class ScheduleServiceImpl implements ScheduleService {
         seatsRepository.updateStatusOrdered(idSchedule);
     }
 
-
-//    @Override
-//    public ScheduleResponse updateSchedule(Schedules Request schedulesRequest) throws Exception {
-//    }
-
     @Override
     public void deleteSchedules(int idSchedule) throws Exception {
         Schedules scheduleAlready = schedulesRepository.findByScheduleId(idSchedule);
