@@ -1,6 +1,7 @@
 package com.filmsservice.service.Interface;
 
 import com.filmsservice.entities.Films;
+import com.filmsservice.model.dto.FilmUpdate;
 import com.filmsservice.model.request.FilmUpdateRequest;
 import com.filmsservice.model.response.FilmScheduleResponse;
 import org.springframework.stereotype.Service;
@@ -13,15 +14,18 @@ public interface FilmService {
 
     Films save(Films films);
 
-    FilmUpdateRequest updateFilm(FilmUpdateRequest filmUpdateRequest) throws Exception;
+    FilmUpdate updateFilm(FilmUpdateRequest filmUpdateRequest) throws Exception;
 
     void deleteById(int idFilm);
 
     List<Films> findAll();
 
-    List<Films> findFilmsShow() throws Exception;
-
-    List<FilmScheduleResponse> findFilmsScheduleByName(String filmName) throws Exception;
 
     Films findFilmsById(Integer idFilm) throws Exception;
+
+    void updateFilmStatusShowing(Integer idFilm) throws Exception;
+
+    List<Films> findFilmsShow() throws Exception;
+
+    List<Films> findFilmsByName(String filmName) throws Exception;
 }

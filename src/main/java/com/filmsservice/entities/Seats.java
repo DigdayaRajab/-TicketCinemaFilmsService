@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
@@ -17,8 +14,11 @@ import javax.persistence.Table;
 public class Seats {
     @EmbeddedId
     private SeatsId seatId;
-    @Column(nullable = false)
-    private String status;
+
+    private boolean isOrdered;
+
+    @Column(name = "fs_fsi")
+    private Integer fs_fsi;
 
 }
 

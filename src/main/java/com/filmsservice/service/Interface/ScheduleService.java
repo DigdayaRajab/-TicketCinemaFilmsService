@@ -10,14 +10,21 @@ import java.util.List;
 
 @Service
 public interface ScheduleService {
-    ScheduleResponse addSchedule(SchedulesRequest schedules);
+    ScheduleResponse addSchedule(SchedulesRequest schedules) throws Exception ;
 
-    ScheduleResponse updateFilm(SchedulesRequest schedules);
+    void updateStatusOrdered(String idSchedule) throws Exception;
 
-    void deleteSchedules(int idSchedule);
+//    ScheduleResponse updateSchedule(SchedulesRequest schedules) throws Exception;
+
+    void deleteSchedules(int idSchedule) throws Exception;
 
     List<Schedules> findAll();
 
-    List<Schedules> findByFilmId(int idFilm);
+    Schedules findByScheduleId(int idSchedule) throws Exception;
 
+    List<Schedules> findSchedulesByFilmId(int idFilm) throws Exception;
+
+    void deleteSeatByIdSchedules(int idSchedule) throws Exception;
+
+    List<Integer> findSchedulesByDate(String date);
 }

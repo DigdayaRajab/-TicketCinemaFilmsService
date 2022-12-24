@@ -22,27 +22,13 @@ Request :
 ```json
 {
   "films":{
-    "filmCode": "String",
-    "filmName": "String",
-    "isShow": "Show",
-    "schedules": [
-      {
-        "showDate": "2022-11-28",
-        "startingHour": "12.00",
-        "endingHour": "13.00",
-        "ticketPrice": "50000"
-      },{
-        "showDate": "2022-11-28",
-        "startingHour": "16.00",
-        "endingHour": "17.00",
-        "ticketPrice": "60000"
-      },{
-        "showDate": "2022-11-28",
-        "startingHour": "20.00",
-        "endingHour": "21.00",
-        "ticketPrice": "40000"
-      }
-    ]
+    "title": "Aquaman",
+    "genres": "Action, Adventure, Fantasy",
+    "synopsis": "Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm's half-human, half-Atlantean brother and true heir to the throne.",
+    "yearsCategories": "+12",
+    "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xLPffWMhMj1l50ND3KchMjYoKmE.jpg",
+    "backPoster": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/9QusGjxcYvfPD1THg6oW3RLeNn7.jpg",
+    "isShow": 0
   }
 }
 ```
@@ -51,36 +37,18 @@ Request :
 
 ```json
 {
-  "status": "number",
-  "message": "string",
+  "status": "200",
+  "message": "successful add data",
   "data": {
-    "idFilm": "Integer, unique",
-    "filmCode": "String",
-    "filmName": "String",
-    "isShow": "String",
-    "schedules": [
-      {
-        "idSchedule": 69,
-        "showDate": "2022-11-28",
-        "startingHour": "12.00",
-        "endingHour": "13.00",
-        "ticketPrice": "50000"
-      },
-      {
-        "idSchedule": 70,
-        "showDate": "2022-11-28",
-        "startingHour": "16.00",
-        "endingHour": "17.00",
-        "ticketPrice": "60000"
-      },
-      {
-        "idSchedule": 71,
-        "showDate": "2022-11-28",
-        "startingHour": "20.00",
-        "endingHour": "21.00",
-        "ticketPrice": "40000"
-      }
-    ]
+    "idFilm": 27,
+    "title": "Aquaman",
+    "genres": "Action, Adventure, Fantasy",
+    "synopsis": "Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm's half-human, half-Atlantean brother and true heir to the throne.",
+    "yearsCategories": "+12",
+    "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xLPffWMhMj1l50ND3KchMjYoKmE.jpg",
+    "backPoster": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/9QusGjxcYvfPD1THg6oW3RLeNn7.jpg",
+    "schedules": null,
+    "show": false
   }
 }
 ```
@@ -98,10 +66,16 @@ Request :
 - Body :
 ```json
 {
-  "idFilm": "Integer, unique",
-  "filmCode": "String",
-  "filmName": "String",
-  "isShow": "String"
+  "filmUpdate":{
+    "idFilm": 21,
+    "title": "ahsiap man",
+    "genres": "comedi",
+    "synopsis": "Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm's half-human, half-Atlantean brother and true heir to the throne.",
+    "yearsCategories": "+12",
+    "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xLPffWMhMj1l50ND3KchMjYoKmE.jpg",
+    "backPoster": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/9QusGjxcYvfPD1THg6oW3RLeNn7.jpg",
+    "isShow": 1
+  }
 }
 ```
 
@@ -109,13 +83,17 @@ Request :
 
 ```json
 {
-  "code": "number",
-  "status": "string",
+  "status": "200",
+  "message": "successful update data",
   "data": {
-    "idFilm": "Integer, unique",
-    "filmCode": "String",
-    "filmName": "String",
-    "isShow": "String"
+    "idFilm": 21,
+    "title": "ahsiap man",
+    "genres": "comedi",
+    "synopsis": "Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm's half-human, half-Atlantean brother and true heir to the throne.",
+    "yearsCategories": "+12",
+    "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xLPffWMhMj1l50ND3KchMjYoKmE.jpg",
+    "backPoster": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/9QusGjxcYvfPD1THg6oW3RLeNn7.jpg",
+    "isShow": 1
   }
 }
 ```
@@ -133,13 +111,42 @@ Request :
 
 ```json
 {
-  "code": "number",
-  "status": "string"
+  "status": "200",
+  "message": "successful delete data",
+  "data": ""
 }
 ```
 
-### List Film
+### Get Film by id
 
+Request :
+
+- Method : GET
+- EndPoint : `/api/film/getFilmById?{id}`
+- Header :
+  - Accept : application/json
+- Response :
+
+```json
+{
+  "status": "200",
+  "message": "successful get data",
+  "data": {
+    "idFilm": 23,
+    "title": "Aquaman",
+    "genres": "Action, Adventure, Fantasy",
+    "synopsis": "Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm's half-human, half-Atlantean brother and true heir to the throne.",
+    "yearsCategories": "+12",
+    "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xLPffWMhMj1l50ND3KchMjYoKmE.jpg",
+    "backPoster": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/9QusGjxcYvfPD1THg6oW3RLeNn7.jpg",
+    "schedules": [],
+    "show": false
+  }
+}
+```
+
+
+### List Film
 Request :
 
 - Method : GET
@@ -151,103 +158,35 @@ Request :
 
 ```json
 {
-  "code": "number",
-  "status": "string",
+  "status": "200",
+  "message": "ok",
   "data": [
     {
-      "idFilm": "Integer, unique",
-      "filmCode": "Long",
-      "filmName": "String",
-      "isShow": "String"
+      "idFilm": 20,
+      "title": "Aquaman",
+      "genres": "Action, Adventure, Fantasy",
+      "synopsis": "Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm's half-human, half-Atlantean brother and true heir to the throne.",
+      "yearsCategories": "+12",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xLPffWMhMj1l50ND3KchMjYoKmE.jpg",
+      "backPoster": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/9QusGjxcYvfPD1THg6oW3RLeNn7.jpg",
+      "schedules": [],
+      "show": false
     },
     {
-      "idFilm": "Integer, unique",
-      "filmCode": "Long",
-      "filmName": "String",
-      "isShow": "String"
+      "idFilm": 21,
+      "title": "ahsiap man",
+      "genres": "comedi",
+      "synopsis": "Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm's half-human, half-Atlantean brother and true heir to the throne.",
+      "yearsCategories": "+12",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xLPffWMhMj1l50ND3KchMjYoKmE.jpg",
+      "backPoster": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/9QusGjxcYvfPD1THg6oW3RLeNn7.jpg",
+      "schedules": [],
+      "show": true
     }
   ]
 }
 ```
 
-### Get Film by id
-
-Request :
-
-- Method : GET
-- EndPoint : `/films/search/{id_film}`
-- Header :
-    - Accept : application/json
-- Response :
-
-```json
-{
-  "status": "number",
-  "message": "string",
-  "data": [
-    {
-      "filmName": "string",
-      "isShow": "string",
-      "showDate": "2022-11-25",
-      "startingHour": "12.00",
-      "endingHour": "13.00",
-      "ticketPrice": "50000"
-    },
-    {
-      "filmName": "string",
-      "isShow": "string",
-      "showDate": "2022-11-25",
-      "startingHour": "16.00",
-      "endingHour": "17.00",
-      "ticketPrice": "60000"
-    }
-  ]
-}
-```
-
-### Get Film by name
-
-Request :
-
-- Method : GET
-- EndPoint : `/api/film/search?`
-- Header :
-    - Authorization : bearer token
-    - Accept : application/json
-- Params :
-
-```json
-{
-  "filmName": "String"
-}
-```
-
-- Response :
-
-```json
-{
-  "status": "number",
-  "message": "string",
-  "data": [
-    {
-      "filmName": "string",
-      "isShow": "string",
-      "showDate": "2022-11-25",
-      "startingHour": "12.00",
-      "endingHour": "13.00",
-      "ticketPrice": "50000"
-    },
-    {
-      "filmName": "string",
-      "isShow": "string",
-      "showDate": "2022-11-25",
-      "startingHour": "16.00",
-      "endingHour": "17.00",
-      "ticketPrice": "60000"
-    }
-  ]
-}
-```
 
 ### Get Film by is Showing
 Request :
@@ -259,28 +198,73 @@ Request :
 
 ```json
 {
-  "status": "number",
-  "message": "string",
+  "status": "200",
+  "message": "ok",
   "data": [
     {
-      "filmName": "string",
-      "isShow": "string",
-      "showDate": "2022-11-25",
-      "startingHour": "12.00",
-      "endingHour": "13.00",
-      "ticketPrice": "50000"
+      "idFilm": 18,
+      "title": "Aquaman",
+      "genres": "Action, Adventure, Fantasy",
+      "synopsis": "Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm's half-human, half-Atlantean brother and true heir to the throne.",
+      "yearsCategories": "+12",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xLPffWMhMj1l50ND3KchMjYoKmE.jpg",
+      "backPoster": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/9QusGjxcYvfPD1THg6oW3RLeNn7.jpg",
+      "schedules": [],
+      "show": true
     },
     {
-      "filmName": "string",
-      "isShow": "string",
-      "showDate": "2022-11-25",
-      "startingHour": "16.00",
-      "endingHour": "17.00",
-      "ticketPrice": "60000"
+      "idFilm": 19,
+      "title": "Aquaman",
+      "genres": "Action, Adventure, Fantasy",
+      "synopsis": "Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm's half-human, half-Atlantean brother and true heir to the throne.",
+      "yearsCategories": "+12",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xLPffWMhMj1l50ND3KchMjYoKmE.jpg",
+      "backPoster": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/9QusGjxcYvfPD1THg6oW3RLeNn7.jpg",
+      "schedules": [],
+      "show": true
     }
   ]
 }
 ```
+
+
+### Get Film by name
+
+Request :
+
+- Method : GET
+- EndPoint : `/api/film/search?`
+- Header :
+  - Authorization : bearer token
+  - Accept : application/json
+- Params :
+
+```json
+{
+  "filmName": "Aquaman"
+}
+```
+
+- Response :
+
+```json
+{
+  "status": "200",
+  "message": "successful get data",
+  "data": {
+    "idFilm": 23,
+    "title": "Aquaman",
+    "genres": "Action, Adventure, Fantasy",
+    "synopsis": "Once home to the most advanced civilization on Earth, Atlantis is now an underwater kingdom ruled by the power-hungry King Orm. With a vast army at his disposal, Orm plans to conquer the remaining oceanic people and then the surface world. Standing in his way is Arthur Curry, Orm's half-human, half-Atlantean brother and true heir to the throne.",
+    "yearsCategories": "+12",
+    "poster": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xLPffWMhMj1l50ND3KchMjYoKmE.jpg",
+    "backPoster": "https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/9QusGjxcYvfPD1THg6oW3RLeNn7.jpg",
+    "schedules": [],
+    "show": false
+  }
+}
+```
+
 
 ### Get Schedule by film name
 Request :
@@ -304,28 +288,6 @@ Request :
   "code": "number",
   "status": "string",
   "data": [
-    {
-      "idFilm": "Integer, unique",
-      "filmCode": "Long",
-      "filmName": "String",
-      "isShow": "String",
-      "Schedules": {
-        "showDate": "String",
-        "startingHour": "String",
-        "ticketPrice": "String"
-      }
-    },
-    {
-      "idFilm": "Integer, unique",
-      "filmCode": "Long",
-      "filmName": "String",
-      "isShow": "String",
-      "Schedules": {
-        "showDate": "String",
-        "startingHour": "String",
-        "ticketPrice": "String"
-      }
-    }
   ]
 }
 ```

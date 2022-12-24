@@ -1,5 +1,6 @@
 package com.filmsservice.model.request;
 
+import com.filmsservice.model.dto.FilmUpdate;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,11 +13,5 @@ import org.springframework.lang.NonNull;
 @ToString
 public class FilmUpdateRequest {
     @NonNull
-    private Integer idFilm;
-    @NonNull
-    private String filmCode;
-    @NonNull
-    private String filmName;
-    @NonNull
-    private String isShow;
+    private FilmUpdate filmUpdate;
 }

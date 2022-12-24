@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
@@ -14,6 +15,10 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @Embeddable
 public class SeatsId implements Serializable {
-    private Character studioName;
+
+    private Character seatRow;
+
     private Integer seatNo;
+
+    private String NoTicket;
 }

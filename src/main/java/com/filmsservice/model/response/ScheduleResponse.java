@@ -1,9 +1,11 @@
 package com.filmsservice.model.response;
 
-import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Data
 @AllArgsConstructor
@@ -12,18 +14,16 @@ public class ScheduleResponse {
 
     private Integer idSchedule;
 
-    @Schema(example = "2022-11-23")
-    private String showDate;
+    private LocalDate showDate;
 
-    @Schema(example = "12.00")
-    private String startingHour;
+    private LocalTime startingHour;
 
-    @Schema(example = "16.00")
-    private String endingHour;
+    private LocalTime endingHour;
 
-    @Schema(example = "50000")
     private String ticketPrice;
 
-    @Schema(example = "Integer, unique")
+    private String studioName;
+
     private Integer fsFk;
+
 }

@@ -5,13 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2438be3e-9b93-44bc-8040-d0da22b3e95f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/configuration/QuartzConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/schedulers/updateFilmsStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/model/dto/FilmUpdate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/model/dto/SeatAdd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/schedulers/FirstScheduler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/configuration/QuartzConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/configuration/QuartzConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/controller/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/controller/FilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/controller/ScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/controller/ScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/controller/SeatsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/entities/Films.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/entities/Films.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/entities/Schedules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/entities/Schedules.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/entities/Seats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/entities/Seats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/entities/SeatsId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/entities/SeatsId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/model/request/FilmUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/model/request/FilmUpdateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/model/request/SchedulesRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/model/request/SchedulesRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/model/response/ScheduleResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/model/response/ScheduleResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/repositories/FilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/repositories/FilmRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/repositories/SchedulesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/repositories/SchedulesRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/repositories/SeatsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/repositories/SeatsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/schedulers/updateFilmsStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/schedulers/updateFilmsStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/service/FilmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/service/FilmServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/service/Interface/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/service/Interface/FilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/service/Interface/ScheduleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/service/Interface/ScheduleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/service/Interface/SeatsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/service/ScheduleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/filmsservice/service/ScheduleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/filmsservice/service/SeatsServiceImpl.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,17 +75,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/IntellijIDEA/BackEndJava/Chalenge/Challenge7/FilmsService/src/main/java/com/filmsservice/service/Interface",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/IntellijIDEA/BackEndJava/Chalenge/Challenge7/FilmsService/src/main/java/com/filmsservice/service/Interface&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IntellijIDEA\BackEndJava\Chalenge\Challenge7\FilmsService\src\main\java\com\filmsservice\service\Interface" />
